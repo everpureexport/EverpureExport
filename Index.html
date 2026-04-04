@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Everpure Exports – Global Quality from India</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #3a8c3f;
+    --green-dark: #2a6b2e;
+    --green-light: #5cb85c;
+    --blue: #1a5f8a;
+    --blue-mid: #2980b9;
+    --blue-light: #4facde;
+    --navy: #1a2a40;
+    --white: #ffffff;
+    --off-white: #f4f9f4;
+    --gray: #6b7c85;
+    --light-gray: #e8f4f8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; color: var(--navy); background: var(--white); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 100;
+    background: rgba(255,255,255,0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 2px solid var(--green-light);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 14px 5%;
+    box-shadow: 0 2px 20px rgba(58,140,63,0.1);
+  }
+  .nav-logo { display: flex; align-items: center; gap: 10px; }
+  .nav-logo-circle {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 20px;
+  }
+  .nav-logo-text { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.3rem; color: var(--navy); }
+  .nav-logo-text span { color: var(--green); }
+  .nav-links { display: flex; gap: 30px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--navy); font-weight: 500; font-size: 0.9rem; letter-spacing: 0.5px; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--green); }
+  .nav-cta {
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    color: white; padding: 9px 22px; border-radius: 25px;
+    text-decoration: none; font-weight: 600; font-size: 0.88rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .nav-cta:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(58,140,63,0.35); }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    background: linear-gradient(145deg, #0e2a1a 0%, #1a3a50 50%, #0e2030 100%);
+    display: flex; align-items: center; justify-content: center;
+    position: relative; overflow: hidden; padding: 100px 5% 60px;
+  }
+  .hero-bg-orbs { position: absolute; inset: 0; pointer-events: none; }
+  .orb {
+    position: absolute; border-radius: 50%;
+    animation: float 8s ease-in-out infinite;
+  }
+  .orb1 { width: 500px; height: 500px; top: -150px; right: -100px; background: radial-gradient(circle, rgba(58,140,63,0.25), transparent 70%); animation-delay: 0s; }
+  .orb2 { width: 400px; height: 400px; bottom: -100px; left: -80px; background: radial-gradient(circle, rgba(26,95,138,0.3), transparent 70%); animation-delay: 3s; }
+  .orb3 { width: 250px; height: 250px; top: 40%; left: 40%; background: radial-gradient(circle, rgba(92,184,92,0.15), transparent 70%); animation-delay: 5s; }
+  @keyframes float { 0%,100%{transform:translateY(0) scale(1)} 50%{transform:translateY(-30px) scale(1.05)} }
+
+  .hero-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; max-width: 1200px; margin: 0 auto; width: 100%; }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(92,184,92,0.15); border: 1px solid rgba(92,184,92,0.4);
+    color: #7ed87e; padding: 6px 16px; border-radius: 20px;
+    font-size: 0.8rem; font-weight: 600; letter-spacing: 1px; text-transform: uppercase;
+    margin-bottom: 24px;
+  }
+  .hero-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.4rem, 5vw, 3.8rem);
+    font-weight: 900; line-height: 1.1;
+    color: white; margin-bottom: 20px;
+  }
+  .hero-title .accent { color: #7ed87e; }
+  .hero-title .accent2 { color: var(--blue-light); }
+  .hero-sub { font-size: 1.05rem; color: rgba(255,255,255,0.7); line-height: 1.7; margin-bottom: 36px; max-width: 500px; }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--green), var(--green-dark));
+    color: white; padding: 14px 30px; border-radius: 30px;
+    text-decoration: none; font-weight: 600; font-size: 0.95rem;
+    transition: all 0.3s; display: inline-flex; align-items: center; gap: 8px;
+    box-shadow: 0 4px 20px rgba(58,140,63,0.4);
+  }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 8px 30px rgba(58,140,63,0.5); }
+  .btn-outline {
+    border: 2px solid rgba(255,255,255,0.3); color: white;
+    padding: 12px 28px; border-radius: 30px; text-decoration: none;
+    font-weight: 500; font-size: 0.95rem; transition: all 0.3s;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  .btn-outline:hover { background: rgba(255,255,255,0.1); border-color: white; }
+
+  .hero-stats { display: flex; gap: 30px; margin-top: 48px; }
+  .stat { text-align: center; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 900; color: #7ed87e; }
+  .stat-label { font-size: 0.78rem; color: rgba(255,255,255,0.5); text-transform: uppercase; letter-spacing: 1px; margin-top: 2px; }
+
+  .hero-visual { position: relative; display: flex; align-items: center; justify-content: center; }
+  .hero-card-stack { position: relative; width: 340px; height: 380px; }
+  .hero-card {
+    position: absolute; border-radius: 20px; padding: 24px;
+    backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1);
+    transition: all 0.3s;
+  }
+  .hc1 { width: 280px; background: rgba(58,140,63,0.2); top: 0; left: 0; animation: cardFloat1 6s ease-in-out infinite; }
+  .hc2 { width: 280px; background: rgba(26,95,138,0.25); top: 80px; right: 0; animation: cardFloat2 6s ease-in-out infinite; }
+  .hc3 { width: 260px; background: rgba(255,255,255,0.08); bottom: 0; left: 20px; animation: cardFloat3 6s ease-in-out infinite; }
+  @keyframes cardFloat1 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-12px)} }
+  @keyframes cardFloat2 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(10px)} }
+  @keyframes cardFloat3 { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+  .hc-icon { font-size: 2rem; margin-bottom: 8px; }
+  .hc-title { font-weight: 700; color: white; font-size: 0.95rem; margin-bottom: 4px; }
+  .hc-sub { font-size: 0.8rem; color: rgba(255,255,255,0.6); }
+  .hc-tag { display: inline-block; background: rgba(92,184,92,0.2); color: #7ed87e; padding: 3px 10px; border-radius: 10px; font-size: 0.72rem; margin-top: 8px; }
+
+  /* SECTION BASE */
+  section { padding: 90px 5%; }
+  .section-tag { display: inline-block; background: var(--off-white); color: var(--green-dark); padding: 5px 16px; border-radius: 20px; font-size: 0.78rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 16px; border: 1px solid rgba(58,140,63,0.2); }
+  .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 800; line-height: 1.2; color: var(--navy); margin-bottom: 16px; }
+  .section-sub { font-size: 1.05rem; color: var(--gray); line-height: 1.7; max-width: 580px; }
+  .section-head { text-align: center; margin-bottom: 60px; }
+  .section-head .section-sub { margin: 0 auto; }
+
+  /* ABOUT */
+  .about { background: var(--off-white); }
+  .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; max-width: 1100px; margin: 0 auto; }
+  .about-visual { position: relative; }
+  .about-img-box {
+    width: 100%; aspect-ratio: 4/3; border-radius: 24px;
+    background: linear-gradient(135deg, var(--green-dark), var(--blue));
+    display: flex; align-items: center; justify-content: center; font-size: 5rem;
+    position: relative; overflow: hidden;
+  }
+  .about-img-box::before {
+    content: ''; position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.04'%3E%3Ccircle cx='30' cy='30' r='20'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .about-badge-float {
+    position: absolute; bottom: -20px; right: -20px;
+    background: white; border-radius: 16px; padding: 16px 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .about-badge-icon { font-size: 2rem; }
+  .about-badge-text { font-size: 0.8rem; color: var(--gray); }
+  .about-badge-text strong { display: block; font-size: 1rem; color: var(--navy); }
+
+  .about-points { margin-top: 32px; display: flex; flex-direction: column; gap: 16px; }
+  .about-point { display: flex; gap: 14px; align-items: flex-start; }
+  .ap-icon { width: 36px; height: 36px; border-radius: 10px; background: linear-gradient(135deg, var(--green), var(--blue-mid)); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; margin-top: 2px; }
+  .ap-text strong { display: block; font-weight: 600; color: var(--navy); margin-bottom: 2px; }
+  .ap-text span { font-size: 0.88rem; color: var(--gray); line-height: 1.5; }
+
+  /* PRODUCTS */
+  .products { background: white; }
+  .products-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 1200px; margin: 0 auto; }
+  .prod-card {
+    border-radius: 20px; overflow: hidden;
+    border: 1px solid #e0ede0; transition: all 0.35s;
+    background: white; position: relative;
+  }
+  .prod-card:hover { transform: translateY(-8px); box-shadow: 0 20px 50px rgba(58,140,63,0.15); border-color: var(--green-light); }
+  .prod-header { padding: 32px 28px 24px; background: linear-gradient(135deg, #f0faf0, #e8f4ff); }
+  .prod-icon { font-size: 3rem; margin-bottom: 12px; }
+  .prod-name { font-family: 'Playfair Display', serif; font-size: 1.3rem; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+  .prod-tag { display: inline-block; padding: 3px 12px; border-radius: 12px; font-size: 0.72rem; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; }
+  .tag-active { background: rgba(58,140,63,0.12); color: var(--green-dark); }
+  .tag-soon { background: rgba(26,95,138,0.1); color: var(--blue); }
+  .tag-future { background: rgba(255,165,0,0.1); color: #c8860a; }
+  .prod-body { padding: 20px 28px 28px; }
+  .prod-desc { font-size: 0.9rem; color: var(--gray); line-height: 1.6; margin-bottom: 16px; }
+  .prod-items { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; }
+  .prod-items li { background: var(--off-white); border: 1px solid #d5e8d5; padding: 4px 12px; border-radius: 10px; font-size: 0.8rem; color: var(--navy); font-weight: 500; }
+
+  /* WHY US */
+  .why { background: linear-gradient(160deg, #0d2118 0%, #1a3a50 100%); color: white; }
+  .why .section-title { color: white; }
+  .why .section-sub { color: rgba(255,255,255,0.6); }
+  .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 28px; max-width: 1100px; margin: 0 auto; }
+  .why-card {
+    background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 20px; padding: 32px 26px; transition: all 0.3s;
+  }
+  .why-card:hover { background: rgba(255,255,255,0.1); transform: translateY(-5px); }
+  .why-icon { font-size: 2.5rem; margin-bottom: 16px; }
+  .why-title { font-weight: 700; font-size: 1.05rem; margin-bottom: 8px; color: #7ed87e; }
+  .why-desc { font-size: 0.88rem; color: rgba(255,255,255,0.6); line-height: 1.6; }
+
+  /* PROCESS */
+  .process { background: var(--off-white); }
+  .process-steps { display: flex; flex-direction: column; gap: 0; max-width: 800px; margin: 0 auto; position: relative; }
+  .process-steps::before {
+    content: ''; position: absolute; left: 28px; top: 0; bottom: 0; width: 2px;
+    background: linear-gradient(to bottom, var(--green), var(--blue));
+  }
+  .step { display: flex; gap: 24px; align-items: flex-start; padding: 0 0 40px 0; position: relative; }
+  .step-num { width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, var(--green), var(--blue-mid)); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; color: white; flex-shrink: 0; z-index: 1; box-shadow: 0 0 0 4px var(--off-white); }
+  .step-content { background: white; border-radius: 16px; padding: 20px 24px; flex: 1; border: 1px solid #e0ede0; box-shadow: 0 4px 20px rgba(0,0,0,0.04); }
+  .step-title { font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .step-desc { font-size: 0.88rem; color: var(--gray); line-height: 1.6; }
+
+  /* MARKETS */
+  .markets { background: white; }
+  .markets-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; max-width: 900px; margin: 0 auto; }
+  .market-card {
+    border-radius: 16px; padding: 28px 20px; text-align: center;
+    background: linear-gradient(135deg, #f0faf0, #e8f4ff);
+    border: 1px solid #d5e8d5; transition: all 0.3s;
+  }
+  .market-card:hover { transform: translateY(-5px); box-shadow: 0 12px 30px rgba(58,140,63,0.12); }
+  .market-flag { font-size: 2.5rem; margin-bottom: 10px; }
+  .market-name { font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+  .market-desc { font-size: 0.8rem; color: var(--gray); }
+
+  /* CONTACT */
+  .contact { background: linear-gradient(145deg, #0e2a1a, #1a3a50); color: white; }
+  .contact .section-title { color: white; }
+  .contact .section-sub { color: rgba(255,255,255,0.65); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: start; max-width: 1000px; margin: 0 auto; }
+  .contact-info { display: flex; flex-direction: column; gap: 24px; }
+  .contact-item { display: flex; gap: 16px; align-items: flex-start; }
+  .ci-icon { width: 48px; height: 48px; border-radius: 14px; background: rgba(92,184,92,0.15); border: 1px solid rgba(92,184,92,0.3); display: flex; align-items: center; justify-content: center; font-size: 1.3rem; flex-shrink: 0; }
+  .ci-text { font-size: 0.85rem; color: rgba(255,255,255,0.5); margin-bottom: 2px; }
+  .ci-value { color: white; font-weight: 600; text-decoration: none; font-size: 1rem; }
+  .ci-value:hover { color: #7ed87e; }
+
+  .contact-form { background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 36px; }
+  .form-title { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; color: white; margin-bottom: 24px; }
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 0.82rem; color: rgba(255,255,255,0.6); margin-bottom: 6px; font-weight: 500; }
+  .form-group input, .form-group select, .form-group textarea {
+    width: 100%; padding: 12px 16px; border-radius: 12px;
+    background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
+    color: white; font-family: 'DM Sans', sans-serif; font-size: 0.9rem;
+    outline: none; transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--green-light); }
+  .form-group input::placeholder, .form-group textarea::placeholder { color: rgba(255,255,255,0.3); }
+  .form-group select option { background: var(--navy); color: white; }
+  .form-submit {
+    width: 100%; padding: 14px; border-radius: 14px;
+    background: linear-gradient(135deg, var(--green), var(--blue));
+    color: white; font-family: 'DM Sans', sans-serif; font-weight: 700;
+    font-size: 1rem; border: none; cursor: pointer; transition: all 0.3s;
+  }
+  .form-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 25px rgba(58,140,63,0.4); }
+
+  /* FOOTER */
+  footer {
+    background: #060f09; color: rgba(255,255,255,0.5);
+    padding: 40px 5% 24px; text-align: center;
+  }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 800; color: white; margin-bottom: 8px; }
+  .footer-logo span { color: var(--green-light); }
+  .footer-tagline { font-size: 0.88rem; margin-bottom: 24px; }
+  .footer-social { display: flex; justify-content: center; gap: 16px; margin-bottom: 24px; }
+  .social-btn {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center;
+    text-decoration: none; font-size: 1rem; transition: all 0.2s;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+  .social-btn:hover { background: var(--green); border-color: var(--green); transform: translateY(-3px); }
+  .footer-copy { font-size: 0.78rem; border-top: 1px solid rgba(255,255,255,0.08); padding-top: 20px; margin-top: 8px; }
+
+  /* Animations */
+  .fade-up { opacity: 0; transform: translateY(30px); transition: opacity 0.6s ease, transform 0.6s ease; }
+  .fade-up.visible { opacity: 1; transform: translateY(0); }
+
+  /* Responsive */
+  @media (max-width: 768px) {
+    .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+    .hero-visual { display: none; }
+    .nav-links { display: none; }
+    .hero { padding-top: 80px; }
+    .about-badge-float { position: static; margin-top: 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">
+    <div class="nav-logo-circle">🌿</div>
+    <div class="nav-logo-text">Everpure <span>Exports</span></div>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#products">Products</a></li>
+    <li><a href="#process">Process</a></li>
+    <li><a href="#markets">Markets</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Get a Quote →</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-orbs">
+    <div class="orb orb1"></div>
+    <div class="orb orb2"></div>
+    <div class="orb orb3"></div>
+  </div>
+  <div class="hero-grid">
+    <div class="hero-content">
+      <div class="hero-badge">🇮🇳 Rajkot, Gujarat, India</div>
+      <h1 class="hero-title">
+        <span class="accent">Global Quality.</span><br>
+        Reliable <span class="accent2">Supply.</span><br>
+        Long-Term Trust.
+      </h1>
+      <p class="hero-sub">Your premium export partner from India. We deliver high-quality tissue & hygiene products to international markets — with consistency, care, and commitment.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">📩 Request Quotation</a>
+        <a href="#products" class="btn-outline">View Products</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">FCL</div><div class="stat-label">Ready Supply</div></div>
+        <div class="stat"><div class="stat-num">🌍</div><div class="stat-label">Global Reach</div></div>
+        <div class="stat"><div class="stat-num">2026</div><div class="stat-label">Est. Year</div></div>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="hero-card-stack">
+        <div class="hero-card hc1">
+          <div class="hc-icon">🧻</div>
+          <div class="hc-title">Tissue & Hygiene Products</div>
+          <div class="hc-sub">Toilet Paper · Facial Tissues · Napkins</div>
+          <div class="hc-tag">✔ Currently Exporting</div>
+        </div>
+        <div class="hero-card hc2">
+          <div class="hc-icon">🌶️</div>
+          <div class="hc-title">Agro & Food Products</div>
+          <div class="hc-sub">Fruits · Garlic Powder · Spices</div>
+          <div class="hc-tag" style="background:rgba(79,172,222,0.2);color:var(--blue-light);">🔜 Coming Soon</div>
+        </div>
+        <div class="hero-card hc3">
+          <div class="hc-icon">⚙️</div>
+          <div class="hc-title">Industrial & Metals</div>
+          <div class="hc-sub">Expanding our product portfolio</div>
+          <div class="hc-tag" style="background:rgba(255,165,0,0.15);color:#f0a500;">🔮 Future Plans</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+  <div class="about-grid">
+    <div class="about-visual fade-up">
+      <div class="about-img-box">🏭</div>
+      <div class="about-badge-float">
+        <div class="about-badge-icon">🤝</div>
+        <div class="about-badge-text">
+          <strong>Long-Term Partnerships</strong>
+          Trusted by buyers globally
+        </div>
+      </div>
+    </div>
+    <div class="fade-up">
+      <div class="section-tag">Who We Are</div>
+      <h2 class="section-title">Built for Global Trade, Grounded in Gujarat</h2>
+      <p class="section-sub">Everpure Exports is a professionally managed export company headquartered in Rajkot, Gujarat — one of India's most dynamic industrial regions. Founded in 2026, we are dedicated to delivering premium Indian products to global buyers with complete transparency and reliability.</p>
+      <div class="about-points">
+        <div class="about-point">
+          <div class="ap-icon">🏭</div>
+          <div class="ap-text"><strong>Strategic Sourcing</strong><span>Partnered with trusted manufacturers for consistent quality supply.</span></div>
+        </div>
+        <div class="about-point">
+          <div class="ap-icon">✅</div>
+          <div class="ap-text"><strong>Strict Quality Assurance</strong><span>Multi-level quality checks from raw material to final shipment.</span></div>
+        </div>
+        <div class="about-point">
+          <div class="ap-icon">📦</div>
+          <div class="ap-text"><strong>FCL Export Capability</strong><span>40ft Container Load expertise with bulk supply support.</span></div>
+        </div>
+        <div class="about-point">
+          <div class="ap-icon">🌐</div>
+          <div class="ap-text"><strong>Global Market Understanding</strong><span>We adapt products to meet regional requirements of international markets.</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PRODUCTS -->
+<section class="products" id="products">
+  <div class="section-head fade-up">
+    <div class="section-tag">Our Products</div>
+    <h2 class="section-title">What We Export</h2>
+    <p class="section-sub">Starting strong with hygiene essentials, expanding into food commodities, and building toward a complete multi-category export portfolio.</p>
+  </div>
+  <div class="products-grid">
+    <div class="prod-card fade-up">
+      <div class="prod-header">
+        <div class="prod-icon">🧻</div>
+        <div class="prod-name">Tissue Paper</div>
+        <span class="prod-tag tag-active">✔ Active</span>
+      </div>
+      <div class="prod-body">
+        <p class="prod-desc">Premium quality tissue paper rolls for daily use — soft, strong, and hygienic.</p>
+        <ul class="prod-items">
+          <li>2 Ply / 3 Ply</li><li>40–60 GSM</li><li>150 Pulls</li><li>Custom Packaging</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prod-card fade-up">
+      <div class="prod-header">
+        <div class="prod-icon">🚽</div>
+        <div class="prod-name">Toilet Paper</div>
+        <span class="prod-tag tag-active">✔ Active</span>
+      </div>
+      <div class="prod-body">
+        <p class="prod-desc">Bulk export of toilet paper rolls in retail and jumbo pack formats for global markets.</p>
+        <ul class="prod-items">
+          <li>Retail 4/6/10 Pack</li><li>Jumbo Roll</li><li>FCL Ready</li><li>Private Label</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prod-card fade-up">
+      <div class="prod-header">
+        <div class="prod-icon">🗂️</div>
+        <div class="prod-name">Paper Napkins</div>
+        <span class="prod-tag tag-active">✔ Active</span>
+      </div>
+      <div class="prod-body">
+        <p class="prod-desc">High-quality paper napkins for hospitality, restaurants, retail chains and institutional buyers.</p>
+        <ul class="prod-items">
+          <li>Dinner Napkins</li><li>Cocktail Size</li><li>Embossed</li><li>Custom Print</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prod-card fade-up">
+      <div class="prod-header">
+        <div class="prod-icon">🧖</div>
+        <div class="prod-name">Facial Tissues</div>
+        <span class="prod-tag tag-active">✔ Active</span>
+      </div>
+      <div class="prod-body">
+        <p class="prod-desc">Ultra-soft facial tissues for personal care, hotels and retail — skin-friendly and highly absorbent.</p>
+        <ul class="prod-items">
+          <li>Box Pack</li><li>Pocket Pack</li><li>Flat Box</li><li>OEM Available</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prod-card fade-up">
+      <div class="prod-header">
+        <div class="prod-icon">🌶️</div>
+        <div class="prod-name">Agro & Food Products</div>
+        <span class="prod-tag tag-soon">🔜 Coming Soon</span>
+      </div>
+      <div class="prod-body">
+        <p class="prod-desc">Premium Indian fruits, garlic powder, onion powder, and natural spices from Gujarat's best farms.</p>
+        <ul class="prod-items">
+          <li>Fresh Fruits</li><li>Garlic Powder</li><li>Onion Powder</li><li>Spices</li>
+        </ul>
+      </div>
+    </div>
+    <div class="prod-card fade-up">
+      <div class="prod-header">
+        <div class="prod-icon">⚙️</div>
+        <div class="prod-name">Metals & More</div>
+        <span class="prod-tag tag-future">🔮 Future</span>
+      </div>
+      <div class="prod-body">
+        <p class="prod-desc">Our expanding vision — industrial metals and other high-value products as we grow into a multi-category exporter.</p>
+        <ul class="prod-items">
+          <li>Industrial Metals</li><li>Commodities</li><li>Other Products</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section class="why">
+  <div class="section-head fade-up">
+    <div class="section-tag" style="background:rgba(92,184,92,0.15);color:#7ed87e;border-color:rgba(92,184,92,0.3);">Why Choose Us</div>
+    <h2 class="section-title">The Everpure Advantage</h2>
+    <p class="section-sub">We don't just supply products — we deliver complete export solutions built on trust and performance.</p>
+  </div>
+  <div class="why-grid">
+    <div class="why-card fade-up"><div class="why-icon">🤝</div><div class="why-title">Long-Term Partnership Focus</div><div class="why-desc">We build relationships, not transactions. Your growth is our mission.</div></div>
+    <div class="why-card fade-up"><div class="why-icon">✅</div><div class="why-title">International Quality Standards</div><div class="why-desc">Strict multi-step QC from production to pre-shipment inspection.</div></div>
+    <div class="why-card fade-up"><div class="why-icon">📦</div><div class="why-title">FCL Export Expertise</div><div class="why-desc">Smooth handling of full container loads with efficient logistics.</div></div>
+    <div class="why-card fade-up"><div class="why-icon">🏷️</div><div class="why-title">Private Label Support</div><div class="why-desc">Build your own brand in your country — we handle packaging & labeling.</div></div>
+    <div class="why-card fade-up"><div class="why-icon">⚡</div><div class="why-title">Fast Inquiry Response</div><div class="why-desc">Quick quotes, transparent pricing, and dedicated communication.</div></div>
+    <div class="why-card fade-up"><div class="why-icon">🌏</div><div class="why-title">Global Market Adaptability</div><div class="why-desc">Products customized for regional standards and buyer requirements.</div></div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="process" id="process">
+  <div class="section-head fade-up">
+    <div class="section-tag">How It Works</div>
+    <h2 class="section-title">Our Export Process</h2>
+    <p class="section-sub">Simple, transparent, and buyer-friendly — from first contact to final delivery.</p>
+  </div>
+  <div class="process-steps">
+    <div class="step fade-up"><div class="step-num">1</div><div class="step-content"><div class="step-title">📋 Requirement Understanding</div><div class="step-desc">Share your product needs, quantity, packaging preferences, and destination country.</div></div></div>
+    <div class="step fade-up"><div class="step-num">2</div><div class="step-content"><div class="step-title">💬 Quotation & Negotiation</div><div class="step-desc">We provide a detailed, competitive quotation and work out the best terms for both parties.</div></div></div>
+    <div class="step fade-up"><div class="step-num">3</div><div class="step-content"><div class="step-title">🔍 Sample Approval</div><div class="step-desc">Product samples dispatched for your review and approval before bulk production begins.</div></div></div>
+    <div class="step fade-up"><div class="step-num">4</div><div class="step-content"><div class="step-title">🏭 Production & Quality Check</div><div class="step-desc">Manufacturing with real-time quality monitoring at every production stage.</div></div></div>
+    <div class="step fade-up"><div class="step-num">5</div><div class="step-content"><div class="step-title">📦 Packaging & Documentation</div><div class="step-desc">Export-grade packaging, complete trade documentation and compliance handled.</div></div></div>
+    <div class="step fade-up"><div class="step-num">6</div><div class="step-content"><div class="step-title">🚢 Shipment & Delivery</div><div class="step-desc">Safe dispatch, shipping coordination, and tracking support until delivery.</div></div></div>
+  </div>
+</section>
+
+<!-- MARKETS -->
+<section class="markets" id="markets">
+  <div class="section-head fade-up">
+    <div class="section-tag">Global Reach</div>
+    <h2 class="section-title">Markets We Serve</h2>
+    <p class="section-sub">Actively targeting and expanding into key international markets across multiple regions.</p>
+  </div>
+  <div class="markets-grid">
+    <div class="market-card fade-up"><div class="market-flag">🇦🇪</div><div class="market-name">UAE & Middle East</div><div class="market-desc">Primary focus market</div></div>
+    <div class="market-card fade-up"><div class="market-flag">🇪🇺</div><div class="market-name">Europe</div><div class="market-desc">Growing demand region</div></div>
+    <div class="market-card fade-up"><div class="market-flag">🌏</div><div class="market-name">Southeast Asia</div><div class="market-desc">High growth potential</div></div>
+    <div class="market-card fade-up"><div class="market-flag">🌍</div><div class="market-name">Africa</div><div class="market-desc">Emerging opportunity</div></div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="section-head fade-up">
+    <div class="section-tag" style="background:rgba(92,184,92,0.15);color:#7ed87e;border-color:rgba(92,184,92,0.3);">Get In Touch</div>
+    <h2 class="section-title">Let's Build Something Great Together</h2>
+    <p class="section-sub">Send your requirements today and receive a complete quotation from our team.</p>
+  </div>
+  <div class="contact-grid">
+    <div class="contact-info fade-up">
+      <div class="contact-item">
+        <div class="ci-icon">📩</div>
+        <div>
+          <div class="ci-text">Email Us</div>
+          <a href="mailto:careeverpure@gmail.com" class="ci-value">careeverpure@gmail.com</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📞</div>
+        <div>
+          <div class="ci-text">Call / WhatsApp</div>
+          <a href="tel:+918490875707" class="ci-value">+91 84908 75707</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📱</div>
+        <div>
+          <div class="ci-text">Alternate Contact</div>
+          <a href="tel:+919586490706" class="ci-value">+91 95864 90706</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📸</div>
+        <div>
+          <div class="ci-text">Follow on Instagram</div>
+          <a href="https://www.instagram.com/everpure_export" target="_blank" class="ci-value">@everpure_export</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📍</div>
+        <div>
+          <div class="ci-text">Location</div>
+          <span class="ci-value">Rajkot, Gujarat, India</span>
+        </div>
+      </div>
+    </div>
+    <div class="contact-form fade-up">
+      <div class="form-title">📋 Request a Quotation</div>
+      <div class="form-group">
+        <label>Your Name / Company</label>
+        <input type="text" placeholder="e.g. Ahmed Al-Rashid / Global Imports LLC">
+      </div>
+      <div class="form-group">
+        <label>Email Address</label>
+        <input type="email" placeholder="your@email.com">
+      </div>
+      <div class="form-group">
+        <label>Country</label>
+        <input type="text" placeholder="e.g. UAE, Germany, Singapore">
+      </div>
+      <div class="form-group">
+        <label>Product Interested In</label>
+        <select>
+          <option value="">Select a product</option>
+          <option>Tissue Paper</option>
+          <option>Toilet Paper</option>
+          <option>Paper Napkins</option>
+          <option>Facial Tissues</option>
+          <option>Agro / Food Products (Coming Soon)</option>
+          <option>Multiple Products</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label>Your Requirements</label>
+        <textarea rows="3" placeholder="Quantity, specifications, packaging needs..."></textarea>
+      </div>
+      <button class="form-submit" onclick="alert('Thank you for your inquiry! We will get back to you within 24 hours. You can also reach us directly at careeverpure@gmail.com')">
+        🚀 Send Inquiry Now
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-logo">Everpure <span>Exports</span></div>
+  <div class="footer-tagline">Your Reliable Export Partner from India · Est. 2026 · Rajkot, Gujarat</div>
+  <div class="footer-social">
+    <a href="https://www.instagram.com/everpure_export" target="_blank" class="social-btn">📸</a>
+    <a href="mailto:careeverpure@gmail.com" class="social-btn">📩</a>
+    <a href="tel:+918490875707" class="social-btn">📞</a>
+  </div>
+  <div class="footer-copy">© 2026 Everpure Exports, Rajkot, Gujarat, India. All Rights Reserved.</div>
+</footer>
+
+<script>
+  // Scroll fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
